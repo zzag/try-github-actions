@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Install kate
+      run: sudo apt install kate
     - name: Run a one-line script
       run: echo Oh hi Mark!
     - name: Run a multi-line script
