@@ -17,3 +17,13 @@ jobs:
     - name: Run tests
       working-directory: build
       run: ctest --verbose
+  
+  foobar:
+    runs-on: ubuntu-latest
+    name: "Foobar, dawg!"
+    strategy:
+      matrix:
+        pal: ["guy", "friend"]
+    steps:
+      - name: Shout out
+        run: echo "I'm not your ${{ matrix.pal }}, buddy"
