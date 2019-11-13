@@ -10,7 +10,7 @@ private slots:
 
 void MathTest::addition()
 {
-    QCOMPARE(2 + 2, 5);
+    QCOMPARE(2 + 2, 4);
 }
 
 QTEST_MAIN(MathTest)
