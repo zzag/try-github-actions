@@ -10,8 +10,7 @@ jobs:
     - name: Install dependencies
       run: sudo apt install extra-cmake-modules qtbase5-dev
     - name: Configure build
-      working-directory: build
-      run: cmake ..
+      run: mkdir build && cd build && cmake ..
     - name: Build
       working-directory: build
       run: make
