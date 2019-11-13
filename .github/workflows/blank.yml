@@ -3,19 +3,17 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  tests:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
-    - name: Install kate
-      run: sudo apt install kate
-    - name: Run a one-line script
-      run: echo Oh hi Mark!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-    - name: Foo
-      run: echo "Bar"
+    - name: Install dependencies
+      run: sudo apt install extra-cmake-modules qtbase5-dev
+    - name: Configure build
+      run: mkdir build && cd build && cmake ..
+    - name: Build
+      run: make
+    - name: Run tests
+      run: make test
